@@ -1,4 +1,4 @@
-package com.example.vacationmanager;
+package com.mtbakalov.vacationmanager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
