@@ -8,4 +8,4 @@ INSERT INTO Project(ProjectID, ProjectName, Description, CurrentTeam)
 VALUES (1, 'project1', 'working on things', 'team1');
 
 INSERT INTO Dismission(DismissionID, DateFrom, DateTo, DateofDismissionCreation, HalfaDayDismission, Approved, Applicant)
-VALUES (1, '11/14', '11/20', '11/10', 'false', 'true', 'Petio');
+VALUES (1, '11/14', '11/20', '11/10', 'false', 'true', 'Petio'); */

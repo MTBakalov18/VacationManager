@@ -1,4 +1,4 @@
-package com.mtbakalov.vacationmanager.tables;
+package com.example.vacationmanager.tables;
 
 import javax.persistence.*;
 
