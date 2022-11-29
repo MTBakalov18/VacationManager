@@ -11,9 +11,7 @@
     <form action="/ceoPage" class="button3">
         <button class="btn">Home</button>
     </form>
-    <form action="vacationRequests.html" class="button3">
-        <button class="btn">Vacation requests</button>
-    </form>
+
     <div class="dropdown">
         <button class="dropbtn">View Information</button>
         <div class="dropdown-content">
@@ -31,7 +29,7 @@
         </div>
     </div>
     <form action="/logout" class="button">
-        <button class="btn">LOG OUT</button>
+        <button class="btn">Log out</button>
     </form>
 </div>
 
@@ -51,7 +49,7 @@
     <tr th:each="team : ${teams}" class="table-items">
         <td th:text="${team.getTeam().teamName}" style="font-size: 30px"></td>
         <td style="font-size: 30px">No Project</td>
-        <td th:text="${team.getUser().nickname}" style="font-size: 30px"></td>
+        <td th:text="${team.getUser().username}" style="font-size: 30px"></td>
     </tr>
 
 </table>

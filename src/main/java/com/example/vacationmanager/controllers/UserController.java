@@ -38,11 +38,6 @@ public class UserController {
         return "register";
     }
 
-    @GetMapping("/goToVacationRequestsPage")
-    public String vacationRequestsPage() {
-        return "vacationRequests";
-    }
-
     @GetMapping("/unassignedPage")
     public String unassignedPage(Model model) {
         model.addAttribute("getLoggedUser", loggedUser);
@@ -75,7 +70,7 @@ public class UserController {
 
     @GetMapping(value="/login")
     public String getUserByUsernameAndPassword(@ModelAttribute User user, Model model) {
-        loggedUser = userRepo.findByUsernameAndPassword(user.getusername(), user.getPassword());
+        loggedUser = userRepo.findByUsernameAndPassword(user.getUsername(), user.getPassword());
         model.addAttribute("getLoggedUser", loggedUser);
 
         if(loggedUser.getRole().contains("CEO")) {

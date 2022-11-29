@@ -22,8 +22,8 @@ public class VacationManagerApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info("Inserting Player 2: {}", userRepository.save(new User("pacata69", "plamen123",
-                "Plamen", "Kostov", "CEO")));
+        logger.info("Inserting CEO: {}", userRepository.save(new User("MTBakalov18", "admin123",
+                "Martin", "Bakalov", "CEO")));
 
     }
 }

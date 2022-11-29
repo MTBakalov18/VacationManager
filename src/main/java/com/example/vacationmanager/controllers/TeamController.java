@@ -33,22 +33,6 @@ public class TeamController{
         return "createTeam";
     }
 
-    @PostMapping("/joinTeam")
-    public String joinTeam(@ModelAttribute Team team, Model model, JPAProjectTeamUser JPAProjectTeamUser) {
-
-        User updatedUser = userController.loggedUser;
-        updatedUser.setRole("Developer");
-        userController.userRepo.save(updatedUser);
-        model.addAttribute("getLoggedUser", updatedUser);
-
-        JPAProjectTeamUserRepository.save(JPAProjectTeamUser);
-        JPAProjectTeamUser updatedUserTeamProject = JPAProjectTeamUserRepository.findById(JPAProjectTeamUser.getId()).get();
-        updatedUserTeamProject.setTeam(team);
-        updatedUserTeamProject.setUser(userController.loggedUser);
-        JPAProjectTeamUserRepository.save(updatedUserTeamProject);
-        return "unassignedPage";
-    }
-
     @PostMapping("/createTeam")
     public String createTeam(@ModelAttribute Team team, Model model, JPAProjectTeamUser JPAProjectTeamUser) {
         teamRepository.saveAndFlush(team);
@@ -64,14 +48,9 @@ public class TeamController{
         updatedUserTeamProject.setTeam(team);
         updatedUserTeamProject.setUser(userController.loggedUser);
         JPAProjectTeamUserRepository.saveAndFlush(updatedUserTeamProject);
-        return "unassignedPage";
+        return "ceoPage";
     }
 
-    @RequestMapping(value = "/joinTeamPage")
-    public String joinTeam(Model model) {
-        model.addAttribute("teams", JPAProjectTeamUserRepository.findAll());
-        return "joinTeam";
-    }
 
     @RequestMapping(value = "/teamsInfo")
     public String getAllTeams(Model model) {
